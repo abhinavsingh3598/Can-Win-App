@@ -1,0 +1,32 @@
+   <div class="booking-container">
+    <div class="booking-form">
+      <mat-form-field class="form-element">
+        <mat-label>City</mat-label>
+        <mat-select [(value)]="selectedCity">
+          <mat-option *ngFor="let city of cities" [value]="city">{{ city.name }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div *ngIf="selectedCity" class="center-element">
+        <div class="info">
+          <h2>Location: {{ selectedCity.locationaddress }}</h2>
+          <h2>Vaccine: {{ selectedCity.vaccineName }}</h2>
+        </div>
+
+        <mat-form-field class="form-element">
+          <mat-label>Availability Date</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="selectedDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <div>
+          <h2>Slots:</h2>
+          <div *ngFor="let slot of selectedCity?.slots; let i = index" class="slot" [class.booked]="!slot.available">
+            <span>{{ slot.time }}</span>
+            <button mat-raised-button color="primary" [disabled]="!slot.available" (click)="bookSlot(slot.time)">BOOK NOW</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

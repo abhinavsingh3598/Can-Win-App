@@ -1,0 +1,31 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .search-container {
+    margin-bottom: 20px;
+  }
+  
+  .full-width-input {
+    width: 100%;
+  }
+  
+  .full-width-table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  mat-cell {
+    padding: 16px;
+    text-align: left;
+  }
+  
+  mat-header-cell {
+    padding: 16px;
+    text-align: left;
+    font-weight: bold;
+  }
+  

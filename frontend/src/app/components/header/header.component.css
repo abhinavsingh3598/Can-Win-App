@@ -1,0 +1,28 @@
+mat-toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #022D36;  /* Add custom color here */
+    color: white;  /* I added white color for text inside the toolbar for better contrast, modify as needed */
+  }
+  
+  .spacer {
+    flex-grow: 1;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .greeting {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .logout-button {
+    font-weight: bold;
+    background-color: red; /* Change the background color to red or any other color */
+    color: white; /* Change the text color to white or any other color for better visibility */
+  }
+  

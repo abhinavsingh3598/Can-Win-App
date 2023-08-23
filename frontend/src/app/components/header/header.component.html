@@ -1,0 +1,12 @@
+
+  
+  <mat-toolbar>
+    <span>CAN-WIN</span>
+    <span class="spacer"></span>
+    <div class="user-info" *ngIf="currentUser">
+      <span class="greeting">Hello, {{ currentUser.firstName }} {{ currentUser.lastName }}</span>
+      <button mat-button class="logout-button" (click)="logout()">Logout</button>
+    </div>
+  </mat-toolbar>
+  
+

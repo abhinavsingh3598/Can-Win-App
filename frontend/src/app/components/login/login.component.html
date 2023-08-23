@@ -1,0 +1,40 @@
+
+  <div class="center-content">
+    <mat-card>
+      <img mat-card-image src="assets/vaccine-image-1.png" alt="Health logo">
+      <mat-card-content class="welcome">Welcome to CAN-WIN</mat-card-content>
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field class="full-width-input">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username">
+        </mat-form-field>
+  
+        <mat-form-field class="full-width-input">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+  
+        <div class="button-area">
+
+          <button mat-raised-button color="accent" type="submit">Login as User</button>
+        </div>
+  
+        <p style="text-align:center;">New User? <a routerLink="/register">Click here to register as a user</a>.</p>
+
+      </form>
+    </mat-card>
+  
+    <div class="support-info">
+      <p>Support Helpline</p>
+      <div>
+        <mat-icon>email</mat-icon>
+        <span>abhinav.singh@dal.ca</span>
+      </div>
+      <div>
+        <mat-icon>phone</mat-icon>
+        <span>7828823153</span>
+      </div>
+    </div>
+  </div>
+  

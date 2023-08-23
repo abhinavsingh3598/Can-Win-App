@@ -1,0 +1,31 @@
+
+   <div class="container">
+    <div class="search-container">
+      <mat-form-field class="full-width-input">
+        <input matInput [(ngModel)]="searchValue" (input)="onSearchChange()" placeholder="Search for a province..." />
+      </mat-form-field>
+    </div>
+  
+    <mat-table class="full-width-table" [dataSource]="filteredProvinces">
+      <ng-container matColumnDef="province">
+        <mat-header-cell *matHeaderCellDef>Province</mat-header-cell>
+        <mat-cell *matCellDef="let province">{{ province?.name }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="cases">
+        <mat-header-cell *matHeaderCellDef>Total active cases</mat-header-cell>
+        <mat-cell *matCellDef="let province">{{ province?.activeCases }}</mat-cell>
+      </ng-container>
+  
+      <ng-container matColumnDef="book">
+        <mat-header-cell *matHeaderCellDef>Book slot</mat-header-cell>
+        <mat-cell *matCellDef="let province">
+          <button mat-raised-button color="accent" (click)="bookSlot(province?.name)">Click to book slot</button>
+        </mat-cell>
+      </ng-container>
+  
+      <mat-header-row *matHeaderRowDef="['province', 'cases', 'book']"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: ['province', 'cases', 'book'];"></mat-row>
+    </mat-table>
+  </div>
+  
